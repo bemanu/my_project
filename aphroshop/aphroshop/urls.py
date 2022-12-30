@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from register.views import register
 
 from aphrobase.views import homepage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/', register, name='register'),
     path('', homepage),
-    path('barbershops/', include('barbershops.urls')),
 ]
